@@ -33,6 +33,11 @@ setup(
     install_requires=dependencies,
     packages=find_packages(),
     test_suite="tests",
+    entry_points={
+        'console_scripts': [
+            'tripper = tripper:tripper.cli_main'
+        ]
+    },
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',

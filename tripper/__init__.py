@@ -6,6 +6,7 @@ from nanohttp import settings
 from restfulpy import Application
 from sqlalchemy_media import StoreManager, FileSystemStore
 
+from .mockup import mockup
 from .controllers.root import Root
 
 
@@ -41,7 +42,7 @@ class Tripper(Application):
         pass
 
     def insert_mockup(self, *args):
-        pass
+        mockup()
 
     def register_cli_launchers(self, subparsers):
         pass

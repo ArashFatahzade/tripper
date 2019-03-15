@@ -17,6 +17,9 @@ dependencies = [
 
     # Testing
     'bddrest',
+
+    # Serving
+    'gunicorn'
 ]
 
 

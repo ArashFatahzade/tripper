@@ -3,7 +3,7 @@ from os.path import dirname, abspath, join
 from bddrest import response, status, when
 from sqlalchemy_media import StoreManager
 
-from tripper.models import Place, PlaceImage, PlaceImageList
+from tripper.models import Place, PlaceImage, PlaceImageList, Category
 
 from .helpers import LocalApplicationTestCase
 
@@ -21,13 +21,18 @@ class TestPlace(LocalApplicationTestCase):
             image1 = PlaceImage.create_from(f'{IMAGE_PATH}/image1.jpeg')
             image2 = PlaceImage.create_from(f'{IMAGE_PATH}/image2.jpeg')
 
+            jungle_category = Category(
+                name='Jungle',
+            )
+
             place1 = Place(
                 name='foo',
                 description='bar',
                 address='a/b/c/d',
                 latitude=0,
                 longitude=0,
-                images=PlaceImageList()
+                images=PlaceImageList(),
+                category=jungle_category,
             )
             place1.images.append(image1)
             place1.images.append(image2)
@@ -50,6 +55,7 @@ class TestPlace(LocalApplicationTestCase):
             assert place['images'] is not None
             assert place['latitude'] is not None
             assert place['longitude'] is not None
+            assert place['category'] is not None
 
             when(
                 'Place Not Found',

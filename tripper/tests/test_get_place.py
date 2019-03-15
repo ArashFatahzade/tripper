@@ -18,8 +18,8 @@ class TestPlace(LocalApplicationTestCase):
     def mockup(cls):
         session = cls.create_session()
         with StoreManager(session):
-            image1 = PlaceImage.create_from(f'{IMAGE_PATH}/image1.jpeg')
-            image2 = PlaceImage.create_from(f'{IMAGE_PATH}/image2.jpeg')
+            image1 = PlaceImage.create_from(f'{IMAGE_PATH}/1.jpeg')
+            image2 = PlaceImage.create_from(f'{IMAGE_PATH}/2.jpeg')
 
             jungle_category = Category(
                 name='Jungle',

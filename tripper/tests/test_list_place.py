@@ -23,9 +23,6 @@ class TestPlace(LocalApplicationTestCase):
                 PlaceImage.create_from(f'{IMAGE_PATH}/2.jpeg'),
             ])
 
-            image1 = PlaceImage.create_from(f'{IMAGE_PATH}/1.jpeg')
-            image2 = PlaceImage.create_from(f'{IMAGE_PATH}/2.jpeg')
-
             jungle_category = Category(
                 name='Jungle',
             )
@@ -36,11 +33,9 @@ class TestPlace(LocalApplicationTestCase):
                 address='a/b/c/d',
                 latitude=0,
                 longitude=0,
-                images=PlaceImageList(),
+                images=images,
                 category=jungle_category,
             )
-            place1.images.append(image1)
-            place1.images.append(image2)
             session.add(place1)
 
             place2 = Place(

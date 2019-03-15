@@ -3,10 +3,12 @@ from restfulpy.controllers import RootController
 
 import tripper
 from .places import PlaceController
+from .categories import CategoryController
 
 
 class APIv1Controller(Controller):
 
+    categories = CategoryController()
     places = PlaceController()
 
     @json

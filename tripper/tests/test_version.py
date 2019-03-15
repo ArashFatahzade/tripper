@@ -13,4 +13,3 @@ class TestVersion(LocalApplicationTestCase):
         ):
             assert status == 200
             assert response.json['version'] == application_version
-

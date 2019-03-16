@@ -15,6 +15,9 @@ dependencies = [
     'restfulpy',
     'sqlalchemy_media',
 
+    #Crawling
+    'requests',
+
     # Testing
     'bddrest',
 

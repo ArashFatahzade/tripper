@@ -6,6 +6,7 @@ from nanohttp import settings
 from restfulpy import Application
 from sqlalchemy_media import StoreManager, FileSystemStore
 
+from .cli import KojaroLuncher
 from .mockup import mockup
 from .controllers.root import Root
 
@@ -45,7 +46,7 @@ class Tripper(Application):
         mockup()
 
     def register_cli_launchers(self, subparsers):
-        pass
+        KojaroLuncher(subparsers)
 
     @classmethod
     def initialize_orm(cls, engine=None):

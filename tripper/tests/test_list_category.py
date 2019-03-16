@@ -26,7 +26,7 @@ class TestCategory(LocalApplicationTestCase):
 
         session.commit()
 
-    def test_list_category(self):
+    def Test_list_category(self):
         with self.given(
             'List categories',
             '/apiv1/categories',
